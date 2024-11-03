@@ -2,38 +2,31 @@ package com.egci428.a11260
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ImageButton
-import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
-
-    // Sample data for testing
-    private val wordList = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
-
+class FortuneCookies : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-
+        setContentView(R.layout.activity_fortune_cookies)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        val listView = findViewById<ListView>(R.id.listView)
-        val adapter = ArrayAdapter(this, R.layout.row, R.id.resultTV, wordList)
-        listView.adapter = adapter
-
-        val addBTN = findViewById<ImageButton>(R.id.addBTN)
-        addBTN.setOnClickListener {
-            val intent = Intent(this,FortuneCookies::class.java)
+        val backBTN = findViewById<ImageButton>(R.id.backBTN)
+        backBTN.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
+
+
 }
