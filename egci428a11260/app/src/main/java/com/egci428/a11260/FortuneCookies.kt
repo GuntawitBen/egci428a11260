@@ -15,6 +15,9 @@ import androidx.core.view.WindowInsetsCompat
 import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 
 class FortuneCookies : AppCompatActivity() {
@@ -38,10 +41,15 @@ class FortuneCookies : AppCompatActivity() {
         val circleBTN = findViewById<Button>(R.id.circleBTN)
         val cookiesIV = findViewById<ImageView>(R.id.CookiesIV)
         val resultTV = findViewById<TextView>(R.id.resultResultTV)
+        val dateTimeTV = findViewById<TextView>(R.id.dateTimeTV)
 
         circleBTN.setOnClickListener {
             val num = kotlin.random.Random.nextInt(0, 9).toString()
             val jsonURL = "https://egci428-d78f6-default-rtdb.firebaseio.com/fortunecookies/"+num+".json"
+            val currentTimestamp = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(
+                Date()
+            )
+            dateTimeTV.text = currentTimestamp
             Toast.makeText(this, "Waiting...", Toast.LENGTH_SHORT).show()
 
             cookiesIV.setImageResource(R.drawable.opened_cookie)
