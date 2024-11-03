@@ -55,13 +55,13 @@
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/newCookiesIV"
+        app:layout_constraintBottom_toTopOf="@+id/CookiesIV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <ImageView
-        android:id="@+id/newCookiesIV"
+        android:id="@+id/CookiesIV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -81,7 +81,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newCookiesIV">
+        app:layout_constraintTop_toBottomOf="@+id/CookiesIV">
 
         <TextView
             android:id="@+id/result2TV"
@@ -132,12 +132,12 @@
         app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
     <Button
-        android:id="@+id/circleButton"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:id="@+id/circleBTN"
+        android:layout_width="267dp"
+        android:layout_height="271dp"
         android:background="@drawable/circle"
         android:gravity="center"
-        android:text="Click Me"
+        android:text="Make a Wish"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
